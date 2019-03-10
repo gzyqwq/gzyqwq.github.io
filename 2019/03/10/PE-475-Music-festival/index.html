@@ -98,25 +98,25 @@
 
 
 
-  <meta name="description" content="终于把这个东西搞好了，呼 我是Jih_Knight 熟悉我的人应该知道以前的id是sdgzy. 哈哈，我是要成为计数大王的男人.">
-<meta name="keywords" content="随笔">
+  <meta name="description" content="设状态$f[i][j][k]$表示  有i个三元组缺3人 有j个三元组缺2人 有k个三元组缺1人 的方案数  然后枚举每一个四元组.枚举把他们放进哪一个三元组中. a表示四元组有a个人放进缺3人的个数.  b表示四元组有b个人放进缺2人三元组个数. c表示四元组有c个人放进缺1人三元组的个数. 答案要求具有无序性. 考虑上面的DP式子就每一个三元组来言是有序性下的三元组的方案数.  还需要除以一个">
+<meta name="keywords" content="组合,动态规划">
 <meta property="og:type" content="article">
-<meta property="og:title" content="A big dream in the cruel world">
-<meta property="og:url" content="http://yoursite.com/2019/03/10/A-big-dream-in-the-cruel-world/index.html">
+<meta property="og:title" content="PE 475 Music festival">
+<meta property="og:url" content="http://yoursite.com/2019/03/10/PE-475-Music-festival/index.html">
 <meta property="og:site_name" content="Jih_Knight的博客">
-<meta property="og:description" content="终于把这个东西搞好了，呼 我是Jih_Knight 熟悉我的人应该知道以前的id是sdgzy. 哈哈，我是要成为计数大王的男人.">
+<meta property="og:description" content="设状态$f[i][j][k]$表示  有i个三元组缺3人 有j个三元组缺2人 有k个三元组缺1人 的方案数  然后枚举每一个四元组.枚举把他们放进哪一个三元组中. a表示四元组有a个人放进缺3人的个数.  b表示四元组有b个人放进缺2人三元组个数. c表示四元组有c个人放进缺1人三元组的个数. 答案要求具有无序性. 考虑上面的DP式子就每一个三元组来言是有序性下的三元组的方案数.  还需要除以一个">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-10T05:58:56.810Z">
+<meta property="og:updated_time" content="2019-03-10T09:28:39.547Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="A big dream in the cruel world">
-<meta name="twitter:description" content="终于把这个东西搞好了，呼 我是Jih_Knight 熟悉我的人应该知道以前的id是sdgzy. 哈哈，我是要成为计数大王的男人.">
+<meta name="twitter:title" content="PE 475 Music festival">
+<meta name="twitter:description" content="设状态$f[i][j][k]$表示  有i个三元组缺3人 有j个三元组缺2人 有k个三元组缺1人 的方案数  然后枚举每一个四元组.枚举把他们放进哪一个三元组中. a表示四元组有a个人放进缺3人的个数.  b表示四元组有b个人放进缺2人三元组个数. c表示四元组有c个人放进缺1人三元组的个数. 答案要求具有无序性. 考虑上面的DP式子就每一个三元组来言是有序性下的三元组的方案数.  还需要除以一个">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/03/10/A-big-dream-in-the-cruel-world/">
+  <link rel="canonical" href="http://yoursite.com/2019/03/10/PE-475-Music-festival/">
 
 
 
@@ -126,7 +126,7 @@
   };
 </script>
 
-  <title>A big dream in the cruel world | Jih_Knight的博客</title>
+  <title>PE 475 Music festival | Jih_Knight的博客</title>
   
 
 
@@ -354,7 +354,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/10/A-big-dream-in-the-cruel-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/10/PE-475-Music-festival/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jih_Knight">
@@ -371,7 +371,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">A big dream in the cruel world
+          <h1 class="post-title" itemprop="name headline">PE 475 Music festival
 
               
             
@@ -398,7 +398,7 @@
                 
               
 
-              <time title="创建时间：2019-03-10 11:38:50 / 修改时间：13:58:56" itemprop="dateCreated datePublished" datetime="2019-03-10T11:38:50+08:00">2019-03-10</time>
+              <time title="创建时间：2019-03-10 17:26:39 / 修改时间：17:28:39" itemprop="dateCreated datePublished" datetime="2019-03-10T17:26:39+08:00">2019-03-10</time>
             
 
             
@@ -437,11 +437,19 @@
       
 
       
-        <p>终于把这个东西搞好了，呼</p>
-<p>我是Jih_Knight</p>
-<p>熟悉我的人应该知道以前的id是sdgzy.</p>
-<p>哈哈，我是要成为计数大王的男人.</p>
-
+        <p>设状态$f[i][j][k]$表示 </p>
+<p>有i个三元组缺3人</p>
+<p>有j个三元组缺2人</p>
+<p>有k个三元组缺1人</p>
+<p>的方案数 </p>
+<p>然后枚举每一个四元组.枚举把他们放进哪一个三元组中.</p>
+<p>a表示四元组有a个人放进缺3人的个数. </p>
+<p>b表示四元组有b个人放进缺2人三元组个数.</p>
+<p>c表示四元组有c个人放进缺1人三元组的个数.</p>
+<p>答案要求具有无序性.</p>
+<p>考虑上面的DP式子就每一个<strong>三元组</strong>来言是有序性下的三元组的方案数. </p>
+<p>还需要除以一个4n!的逆元. </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxN = <span class="number">200</span> + <span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> mod = <span class="number">1000000007</span>;</span><br><span class="line"><span class="keyword">int</span> cb[<span class="number">1007</span>][<span class="number">1007</span>];</span><br><span class="line"><span class="keyword">int</span> f[maxN][maxN][maxN];</span><br><span class="line"><span class="keyword">int</span> fac[maxN];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Pre</span><span class="params">(<span class="keyword">int</span> N)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; ++i)</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt;= i; ++j)</span><br><span class="line">      cb[i][j] = j ? (cb[i - <span class="number">1</span>][j - <span class="number">1</span>] + cb[i - <span class="number">1</span>][j]) % mod : <span class="number">1</span>;</span><br><span class="line">	fac[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; N; ++i)</span><br><span class="line">      fac[i] = fac[i - <span class="number">1</span>] * i % mod;</span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Solve</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">	f[n / <span class="number">3</span>][<span class="number">0</span>][<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = n / <span class="number">3</span>;i &gt;= <span class="number">0</span>;-- i) &#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j = n / <span class="number">3</span>;j &gt;= <span class="number">0</span>;-- j) &#123;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> k = n / <span class="number">3</span>;k &gt;= <span class="number">0</span>;-- k) &#123;</span><br><span class="line">				<span class="keyword">if</span>(f[i][j][k]) &#123;</span><br><span class="line">					<span class="keyword">for</span>(<span class="keyword">int</span> a = <span class="number">0</span>;a &lt;= <span class="number">4</span>;++ a) &#123;</span><br><span class="line">						<span class="keyword">for</span>(<span class="keyword">int</span> b = <span class="number">0</span>;a + b &lt;= <span class="number">4</span>;++ b) &#123;</span><br><span class="line">							<span class="keyword">int</span> c = <span class="number">4</span> - a - b;</span><br><span class="line">							<span class="keyword">if</span>(c &gt; k) <span class="keyword">continue</span>;</span><br><span class="line">							<span class="keyword">int</span> x = cb[j][b] % mod * cb[k][c] % mod * fac[b] % mod * fac[c] % mod * cb[<span class="number">4</span>][a] % mod * cb[<span class="number">4</span> - a][b] % mod;</span><br><span class="line">							f[i - a][j - b + a][k - c + b] += f[i][j][k] * x % mod;</span><br><span class="line">							f[i - a][j - b + a][k - c + b] %= mod; </span><br><span class="line">						&#125;</span><br><span class="line">					&#125; </span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125; </span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d"</span>,f[<span class="number">0</span>][<span class="number">0</span>][<span class="number">0</span>]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">signed</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n = <span class="number">600</span>;</span><br><span class="line">	Pre(n);</span><br><span class="line">	Solve(n);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125; </span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">ans:75780067</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -464,7 +472,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/随笔/" rel="tag"># 随笔</a>
+            <a href="/tags/组合/" rel="tag"># 组合</a>
+          
+            <a href="/tags/动态规划/" rel="tag"># 动态规划</a>
           
         </div>
       
@@ -477,14 +487,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/03/10/codeforces-project-Euler-泛做/" rel="next" title="codeforces / project Euler 泛做">
+                <i class="fa fa-chevron-left"></i> codeforces / project Euler 泛做
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/03/10/PE-577-Counting-hexagons/" rel="prev" title="PE 577 Counting hexagons">
-                PE 577 Counting hexagons <i class="fa fa-chevron-right"></i>
+              <a href="/2019/03/10/My-head-file/" rel="prev" title="My head file">
+                My head file <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

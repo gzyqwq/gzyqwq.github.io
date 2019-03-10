@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[My head file]]></title>
+    <url>%2F2019%2F03%2F10%2FMy-head-file%2F</url>
+    <content type="text"><![CDATA[一般给出的代码都是缺少头文件的，不然代码太长了.123456789101112131415161718192021222324/*header*/#include &lt;iostream&gt;#include &lt;cstdio&gt;#include &lt;cstring&gt;#include &lt;algorithm&gt;#include &lt;vector&gt;#include &lt;cmath&gt;#include &lt;map&gt;#include &lt;queue&gt;#define gc getchar()#define pc putchar#define ll long long#define mk make_pair#define fi first#define se secondusing std::min;using std::max;using std::swap;inline int gi() &#123; int x = 0,f = 1;char c = gc; while(c &lt; '0' || c &gt; '9') &#123;if(c == '-')f = -1;c = gc;&#125; while(c &gt;= '0' &amp;&amp; c &lt;= '9') &#123;x = x * 10 + c - '0';c = gc;&#125;return x * f;&#125;]]></content>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[PE 475 Music festival]]></title>
+    <url>%2F2019%2F03%2F10%2FPE-475-Music-festival%2F</url>
+    <content type="text"><![CDATA[设状态$f[i][j][k]$表示 有i个三元组缺3人 有j个三元组缺2人 有k个三元组缺1人 的方案数 然后枚举每一个四元组.枚举把他们放进哪一个三元组中. a表示四元组有a个人放进缺3人的个数. b表示四元组有b个人放进缺2人三元组个数. c表示四元组有c个人放进缺1人三元组的个数. 答案要求具有无序性. 考虑上面的DP式子就每一个三元组来言是有序性下的三元组的方案数. 还需要除以一个4n!的逆元. 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748const int maxN = 200 + 5;const int mod = 1000000007;int cb[1007][1007];int f[maxN][maxN][maxN];int fac[maxN];void Pre(int N) &#123; for (int i = 0; i &lt; N; ++i) for (int j = 0; j &lt;= i; ++j) cb[i][j] = j ? (cb[i - 1][j - 1] + cb[i - 1][j]) % mod : 1; fac[0] = 1; for (int i = 1; i &lt; N; ++i) fac[i] = fac[i - 1] * i % mod; return;&#125;void Solve(int n) &#123; f[n / 3][0][0] = 1; for(int i = n / 3;i &gt;= 0;-- i) &#123; for(int j = n / 3;j &gt;= 0;-- j) &#123; for(int k = n / 3;k &gt;= 0;-- k) &#123; if(f[i][j][k]) &#123; for(int a = 0;a &lt;= 4;++ a) &#123; for(int b = 0;a + b &lt;= 4;++ b) &#123; int c = 4 - a - b; if(c &gt; k) continue; int x = cb[j][b] % mod * cb[k][c] % mod * fac[b] % mod * fac[c] % mod * cb[4][a] % mod * cb[4 - a][b] % mod; f[i - a][j - b + a][k - c + b] += f[i][j][k] * x % mod; f[i - a][j - b + a][k - c + b] %= mod; &#125; &#125; &#125; &#125; &#125; &#125; printf("%d",f[0][0][0]);&#125;signed main() &#123; int n = 600; Pre(n); Solve(n); return 0;&#125; /*ans:75780067*/]]></content>
+      <tags>
+        <tag>组合</tag>
+        <tag>动态规划</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[codeforces / project Euler 泛做]]></title>
     <url>%2F2019%2F03%2F10%2Fcodeforces-project-Euler-%E6%B3%9B%E5%81%9A%2F</url>
     <content type="text"><![CDATA[[TOC] 发现这个题库，很有意思，趁着还没有学习微积分，看不了书，赶快从头开始刷，所以都是一些简单的题目，即时简单，有一些结论还是很有意思的。 网上资料很少，有的找不到答案，所以只有硬着头皮做了。 PE 15一个网格图,只能向下，或者向右走,问从$(0,0)$到$(n,m)$到路径有多少条. 这里的结论是有$C_{n+m}^n$. 证明：从0,0到n,m会往下走n步,往右走m步，把路径看成一个长度为n+m的序列，往下走为0,往右走为1 有n个0,m个1,转化为有多少个不同的序列。 我们考虑从序列中选择0的方案数.就是$C_{n+m}^n$. PE 76这是一道很有意思的Partition Function P题目。 里面详细的讲解了如何使用数学的方法来解，不过全是英文，我没有看懂。 也可以使用$f[i][j]$表示以i结尾最后一段的和式j数的方案数. 然后发现可以使用前缀和优化，复杂度$O(n^2)$ 由于是DP,所以放一下代码仅供参考. 12345678910111213141516int main() &#123; f[0][0] = sum[0][0] = 1; for(int i = 1;i &lt;= 100;++ i) sum[0][i] = sum[0][i - 1]; int n = 100; for(int i = 1;i &lt;= n;++ i) &#123; for(int j = 1;j &lt;= i;++ j) &#123; f[i][j] = sum[i - j][j]; sum[i][j] = f[i][j]; &#125; for(int j = 2;j &lt;= 100;++ j) sum[i][j] += sum[i][j - 1]; &#125; ll Ans = 0; Ans = sum[100][99]; std::cout &lt;&lt; Ans; return 0;&#125; 从上面的链接中得知,有生成函数的解法。 PE 90一个trick , 显然可以用对数函数来比较大小 $log(a^b) = b*log(a)$ PE 577恩，调这道题做了一下午。 $f(i)$表示以i行为底的六边形造成的共线，然后就可以计算了 $$f(n) = f(n-1) + \sum_{s=1}^{\lfloor n/3\rfloor}s(n-3s+1)$$ PE 97一个trick ， mod， 乘法和加法满足 $(a*b)\%mod = ((a\% mod) * (b\% mod) )\%mod$ $(a+b)\%mod = ((a\% mod) + (b\% mod) )\%mod$ 待做PE 601 PE 613 PE 655 PE 493 PE 102 PE 618]]></content>
