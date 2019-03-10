@@ -1,8 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[Hello World]]></title>
-    <url>%2F2019%2F03%2F10%2Fhello-world%2F</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+    <title><![CDATA[PE 577 Counting hexagons]]></title>
+    <url>%2F2019%2F03%2F10%2FPE-577-Counting-hexagons%2F</url>
+    <content type="text"><![CDATA[PE 577 Counting hexagons扣细节扣了30min，仔细观察了一会发现一个比较容易递推的式子 $f(i)$表示i行造成的六边形的数量。 就有递推式$$f(n) = f(n-1) + \sum_{s=1}^{\lfloor n/3\rfloor}s(n-3s+1)$$ 考虑这样一张图 我们考虑新增加一行会贡献多少，显然只会增加以该行为底边的六边形，然后枚举一个长度，考虑该长度下会贡献多少。 我们先来看一下小的情况,即长度为2的情况 我们会发现有一个性质：当位于中间的S边可以出现的话，那么一定可以形成三角形。 我们会发现,只有两边中间这一部分才能形成六边形，两边是不能形成的。 就是$n - 3 * i + 1$，需要注意的是对于在这个底边的每一个点都会造成$1$的贡献.所以要乘上$i$（猜的题意，被题意卡了好久，mmp） 1234567891011121314151617181920const int maxN = 10000000 + 7;long long f[maxN];int main() &#123; int n = 12345; f[3] = 1; for(int i = 4;i &lt;= n;++ i) &#123; f[i] = f[i - 1]; int tmp = i / 3; for(int j = 1;j &lt;= tmp;++ j) &#123; f[i] += (i - 3 * j + 1) * j; &#125; &#125; long long Sum = 0; for(int i = 1;i &lt;= n;++ i) Sum += f[i]; std::cout &lt;&lt; Sum; return 0;&#125;/*ans：265695031399260211*/]]></content>
+      <tags>
+        <tag>题解</tag>
+        <tag>题库-PE</tag>
+        <tag>组合</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[A big dream in the cruel world]]></title>
+    <url>%2F2019%2F03%2F10%2FA-big-dream-in-the-cruel-world%2F</url>
+    <content type="text"><![CDATA[终于把这个东西搞好了，呼 我是Jih_Knight 熟悉我的人应该知道以前的id是sdgzy. 哈哈，我是要成为计数大王的男人.]]></content>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
   </entry>
 </search>
