@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[AT1983 BBQ Hard]]></title>
+    <url>%2F2019%2F03%2F16%2FAT1983-BBQ-Hard%2F</url>
+    <content type="text"><![CDATA[好题，考虑其组合意义。$dbinom{a_i+a_j+b_i+b_j}{a_i+a_j}$的组合意义是从$(0,0)$点到$(a_i+a_j,b_i+b_j)$的方案数这样还是没有用考虑移动坐标系，看成$（-a_i,-b_i）$到$(a_j,b_j)$的方案数这就可以DP了$f[i][j]$表示到$(i,j)$点的方案数$$f[i][j] = f[i - 1][j] + f[i][j - 1]$$123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354const int maxN = 200000 + 7;const int inv2 = 500000004;int f[4007][4007] , fac[maxN], a[maxN],b[maxN], inv[maxN];const int mod = 1e9 + 7;int fast_pow(int a,int b)&#123; int ans = 1; for(;b;b &gt;&gt;= 1,a = a * a%mod) if(b &amp; 1) ans = ans * a % mod; return ans;&#125;void Pre() &#123; fac[0] = 1; for(int i = 1;i &lt;= 8000;++ i) fac[i] = 1ll * fac[i - 1] * i % mod; inv[8000] = fast_pow(fac[8000],mod - 2); for(int i = 7999;i &gt;= 0;i --) inv[i] = 1ll * inv[i + 1] * (i + 1) % mod; int n = gi(); for(int i = 1;i &lt;= n;++ i) a[i] = gi() , b[i] = gi(); for(int i = 1;i &lt;= n;++ i) f[base - a[i]][base - b[i]] ++; for(int i = 1;i &lt;= 4000 + 4;++ i) &#123; for(int j = 1;j &lt;= 4000 + 4;++ j) &#123; f[i][j] += f[i - 1][j] + f[i][j - 1]; f[i][j] %= mod; &#125; &#125; return ;&#125;const int base = 2001;int C(int n , int m) &#123; return fac[n] * inv[m] % mod * inv[n - m] % mod;&#125;signed main() &#123; Pre(); int Ans = 0; for(int i = 1;i &lt;= n;++ i) &#123; Ans += f[a[i] + base][b[i] + base] ; Ans %= mod; Ans -= C(2 * a[i] + 2 * b[i] , 2 * a[i]); Ans %= mod; &#125; Ans += mod; Ans %= mod; Ans = Ans * inv2 % mod; std::cout &lt;&lt; Ans; return 0;&#125; 后面那俩瘠薄玩意好烦啊，偏偏在自习课的时候讨论自己出的题，傻逼吧，凡是让老子不爽的东西，都喷]]></content>
+      <tags>
+        <tag>组合</tag>
+        <tag>题库 - AtCoder</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[逆元]]></title>
     <url>%2F2019%2F03%2F16%2F%E9%80%86%E5%85%83%2F</url>
     <content type="text"><![CDATA[逆元都快省选了，连逆元都不知道这里我们用$x’$表示x的逆元。emm，先写一点逆元吧。$$\frac{b}{a}\equiv r(\mod p)$$对于这个式子给定a，b，p。求r，其中$a|b$。我们找到一个a’使得$a’ * a\equiv1(\mod p)$就有$$b*a’ \equiv r * a * a’$$$$b*a’ \equiv r(\mod p)$$考虑如何找到a’扩欧：$a*a’\equiv 1(\mod p)$$a*a’+k*p=1$欧拉定理（这里是数论的欧拉定理）$a*a^{\phi (p-1)} \equiv 1(mod p)$更一般的形式 - 费马小定理（p是质数）：$a*a^{p-2}\equiv1(\mod p)$根据扩欧我们知道如果$(a,p)\ne 1$就无解。 可以线性求逆元：首先有$inv[1] = 1$对于每一个i，模数$p=k*i+r(r &lt; i)$$k*i+r\equiv 0(\mod p)$两边乘$i’r’$$k*r’+i’\equiv 0(\mod p)$$i’\equiv -k*r’(\mod p)$$i’\equiv p*r’-k*r’(\mod p)$$i’\equiv (p-k)*r’(\mod p)$12inv[1] = 1;for(int i = 2;i &lt;= n;++ i) inv[i] = (p - p / i) * inv[p % i] % p; 求阶乘逆元，不知道其他人怎么推的式子$(n-1)!*(n-1)!’ \equiv 1(\mod p)$$n!*n!’ \equiv 1(\mod p)$$(n-1)!*(n-1)!’ \equiv n!*n!’(\mod p)$$(n-1)!’ \equiv n*n!’(\mod p)$先处理$n!$逆元然后递推123456fac[0] = 1;for(int i = 1;i &lt;= n;++ i) fac[i] = 1ll * fac[i - 1] * i % mod;inv[n] = fast_pow(fac[n],mod - 2);for(int i = n - 1;i &gt;= 0;i --) inv[i] = 1ll * inv[i + 1] * (i + 1) % mod; 之后，貌似没了。]]></content>
