@@ -98,25 +98,25 @@
 
 
 
-  <meta name="description" content="设状态$f[i][j][k]$表示  有i个三元组缺3人 有j个三元组缺2人 有k个三元组缺1人 的方案数  然后枚举每一个四元组.枚举把他们放进哪一个三元组中. a表示四元组有a个人放进缺3人的个数.  b表示四元组有b个人放进缺2人三元组个数. c表示四元组有c个人放进缺1人三元组的个数. 答案要求具有无序性. 考虑上面的DP式子就每一个三元组来言是有序性下的三元组的方案数.  还需要除以一个">
-<meta name="keywords" content="组合,动态规划">
+  <meta name="description" content="逆元都快省选了，连逆元都不知道这里我们用$x’$表示x的逆元。emm，先写一点逆元吧。$$\frac{b}{a}\equiv r(\mod p)$$对于这个式子给定a，b，p。求r，其中$a|b$。我们找到一个a’使得$a’ * a\equiv1(\mod p)$就有$$b*a’ \equiv r * a * a’$$$$b*a’ \equiv r(\mod p)$$考虑如何找到a’扩欧：$a*a">
+<meta name="keywords" content="知识总结">
 <meta property="og:type" content="article">
-<meta property="og:title" content="PE 475 Music festival">
-<meta property="og:url" content="http://yoursite.com/2019/03/10/PE-475-Music-festival/index.html">
+<meta property="og:title" content="逆元">
+<meta property="og:url" content="http://yoursite.com/2019/03/16/逆元/index.html">
 <meta property="og:site_name" content="Jih_Knight的博客">
-<meta property="og:description" content="设状态$f[i][j][k]$表示  有i个三元组缺3人 有j个三元组缺2人 有k个三元组缺1人 的方案数  然后枚举每一个四元组.枚举把他们放进哪一个三元组中. a表示四元组有a个人放进缺3人的个数.  b表示四元组有b个人放进缺2人三元组个数. c表示四元组有c个人放进缺1人三元组的个数. 答案要求具有无序性. 考虑上面的DP式子就每一个三元组来言是有序性下的三元组的方案数.  还需要除以一个">
+<meta property="og:description" content="逆元都快省选了，连逆元都不知道这里我们用$x’$表示x的逆元。emm，先写一点逆元吧。$$\frac{b}{a}\equiv r(\mod p)$$对于这个式子给定a，b，p。求r，其中$a|b$。我们找到一个a’使得$a’ * a\equiv1(\mod p)$就有$$b*a’ \equiv r * a * a’$$$$b*a’ \equiv r(\mod p)$$考虑如何找到a’扩欧：$a*a">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-10T09:28:39.547Z">
+<meta property="og:updated_time" content="2019-03-16T03:04:26.439Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="PE 475 Music festival">
-<meta name="twitter:description" content="设状态$f[i][j][k]$表示  有i个三元组缺3人 有j个三元组缺2人 有k个三元组缺1人 的方案数  然后枚举每一个四元组.枚举把他们放进哪一个三元组中. a表示四元组有a个人放进缺3人的个数.  b表示四元组有b个人放进缺2人三元组个数. c表示四元组有c个人放进缺1人三元组的个数. 答案要求具有无序性. 考虑上面的DP式子就每一个三元组来言是有序性下的三元组的方案数.  还需要除以一个">
+<meta name="twitter:title" content="逆元">
+<meta name="twitter:description" content="逆元都快省选了，连逆元都不知道这里我们用$x’$表示x的逆元。emm，先写一点逆元吧。$$\frac{b}{a}\equiv r(\mod p)$$对于这个式子给定a，b，p。求r，其中$a|b$。我们找到一个a’使得$a’ * a\equiv1(\mod p)$就有$$b*a’ \equiv r * a * a’$$$$b*a’ \equiv r(\mod p)$$考虑如何找到a’扩欧：$a*a">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/03/10/PE-475-Music-festival/">
+  <link rel="canonical" href="http://yoursite.com/2019/03/16/逆元/">
 
 
 
@@ -126,7 +126,7 @@
   };
 </script>
 
-  <title>PE 475 Music festival | Jih_Knight的博客</title>
+  <title>逆元 | Jih_Knight的博客</title>
   
 
 
@@ -354,7 +354,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/10/PE-475-Music-festival/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/16/逆元/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jih_Knight">
@@ -371,7 +371,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">PE 475 Music festival
+          <h1 class="post-title" itemprop="name headline">逆元
 
               
             
@@ -398,7 +398,7 @@
                 
               
 
-              <time title="创建时间：2019-03-10 17:26:39 / 修改时间：17:28:39" itemprop="dateCreated datePublished" datetime="2019-03-10T17:26:39+08:00">2019-03-10</time>
+              <time title="创建时间：2019-03-16 11:04:10 / 修改时间：11:04:26" itemprop="dateCreated datePublished" datetime="2019-03-16T11:04:10+08:00">2019-03-16</time>
             
 
             
@@ -437,19 +437,13 @@
       
 
       
-        <p>设状态$f[i][j][k]$表示 </p>
-<p>有i个三元组缺3人</p>
-<p>有j个三元组缺2人</p>
-<p>有k个三元组缺1人</p>
-<p>的方案数 </p>
-<p>然后枚举每一个四元组.枚举把他们放进哪一个三元组中.</p>
-<p>a表示四元组有a个人放进缺3人的个数. </p>
-<p>b表示四元组有b个人放进缺2人三元组个数.</p>
-<p>c表示四元组有c个人放进缺1人三元组的个数.</p>
-<p>答案要求具有无序性.</p>
-<p>考虑上面的DP式子就每一个<strong>三元组</strong>来言是有序性下的三元组的方案数. </p>
-<p>还需要除以一个4n!的逆元. </p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxN = <span class="number">200</span> + <span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> mod = <span class="number">1000000007</span>;</span><br><span class="line"><span class="keyword">int</span> cb[<span class="number">1007</span>][<span class="number">1007</span>];</span><br><span class="line"><span class="keyword">int</span> f[maxN][maxN][maxN];</span><br><span class="line"><span class="keyword">int</span> fac[maxN];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Pre</span><span class="params">(<span class="keyword">int</span> N)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; ++i)</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt;= i; ++j)</span><br><span class="line">      cb[i][j] = j ? (cb[i - <span class="number">1</span>][j - <span class="number">1</span>] + cb[i - <span class="number">1</span>][j]) % mod : <span class="number">1</span>;</span><br><span class="line">	fac[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; N; ++i)</span><br><span class="line">      fac[i] = fac[i - <span class="number">1</span>] * i % mod;</span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Solve</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">	f[n / <span class="number">3</span>][<span class="number">0</span>][<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = n / <span class="number">3</span>;i &gt;= <span class="number">0</span>;-- i) &#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j = n / <span class="number">3</span>;j &gt;= <span class="number">0</span>;-- j) &#123;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> k = n / <span class="number">3</span>;k &gt;= <span class="number">0</span>;-- k) &#123;</span><br><span class="line">				<span class="keyword">if</span>(f[i][j][k]) &#123;</span><br><span class="line">					<span class="keyword">for</span>(<span class="keyword">int</span> a = <span class="number">0</span>;a &lt;= <span class="number">4</span>;++ a) &#123;</span><br><span class="line">						<span class="keyword">for</span>(<span class="keyword">int</span> b = <span class="number">0</span>;a + b &lt;= <span class="number">4</span>;++ b) &#123;</span><br><span class="line">							<span class="keyword">int</span> c = <span class="number">4</span> - a - b;</span><br><span class="line">							<span class="keyword">if</span>(c &gt; k) <span class="keyword">continue</span>;</span><br><span class="line">							<span class="keyword">int</span> x = cb[j][b] % mod * cb[k][c] % mod * fac[b] % mod * fac[c] % mod * cb[<span class="number">4</span>][a] % mod * cb[<span class="number">4</span> - a][b] % mod;</span><br><span class="line">							f[i - a][j - b + a][k - c + b] += f[i][j][k] * x % mod;</span><br><span class="line">							f[i - a][j - b + a][k - c + b] %= mod; </span><br><span class="line">						&#125;</span><br><span class="line">					&#125; </span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125; </span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d"</span>,f[<span class="number">0</span>][<span class="number">0</span>][<span class="number">0</span>]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">signed</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n = <span class="number">600</span>;</span><br><span class="line">	Pre(n);</span><br><span class="line">	Solve(n);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125; </span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">ans:75780067</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+        <h1 id="逆元"><a href="#逆元" class="headerlink" title="逆元"></a>逆元</h1><p><del>都快省选了，连逆元都不知道</del><br>这里我们用$x’$表示x的逆元。<br>emm，先写一点逆元吧。<br>$$\frac{b}{a}\equiv r(\mod p)$$<br>对于这个式子给定a，b，p。<br>求r，其中$a|b$。<br>我们找到一个a’使得$a’ * a\equiv1(\mod p)$<br>就有$$b*a’ \equiv r * a * a’$$<br>$$b*a’ \equiv r(\mod p)$$<br>考虑如何找到a’<br>扩欧：<br>$a*a’\equiv 1(\mod p)$<br>$a*a’+k*p=1$<br>欧拉定理（这里是数论的欧拉定理）<br>$a*a^{\phi (p-1)} \equiv 1(mod p)$<br>更一般的形式 - 费马小定理（p是质数）：<br>$a*a^{p-2}\equiv1(\mod p)$<br>根据扩欧我们知道如果$(a,p)\ne 1$就无解。</p>
+<hr>
+<p>可以线性求逆元：<br>首先有$inv[1] = 1$<br>对于每一个i，模数$p=k*i+r(r &lt; i)$<br>$k*i+r\equiv 0(\mod p)$<br>两边乘$i’r’$<br>$k*r’+i’\equiv 0(\mod p)$<br>$i’\equiv -k*r’(\mod p)$<br>$i’\equiv p*r’-k*r’(\mod p)$<br>$i’\equiv (p-k)*r’(\mod p)$<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">inv[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>;i &lt;= n;++ i) inv[i] = (p - p / i) * inv[p % i] % p;</span><br></pre></td></tr></table></figure></p>
+<hr>
+<p>求阶乘逆元，不知道其他人怎么推的式子<br>$(n-1)!*(n-1)!’ \equiv 1(\mod p)$<br>$n!*n!’ \equiv 1(\mod p)$<br>$(n-1)!*(n-1)!’ \equiv n!*n!’(\mod p)$<br>$(n-1)!’ \equiv n*n!’(\mod p)$<br>先处理$n!$逆元<br>然后递推<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">fac[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= n;++ i) </span><br><span class="line">  fac[i] = <span class="number">1l</span>l * fac[i - <span class="number">1</span>] * i % mod;</span><br><span class="line">inv[n] = fast_pow(fac[n],mod - <span class="number">2</span>);</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = n - <span class="number">1</span>;i &gt;= <span class="number">0</span>;i --)</span><br><span class="line">  inv[i] = <span class="number">1l</span>l * inv[i + <span class="number">1</span>] * (i + <span class="number">1</span>) % mod;</span><br></pre></td></tr></table></figure></p>
+<p>之后，貌似没了。</p>
+
       
     </div>
 
@@ -472,9 +466,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/组合/" rel="tag"># 组合</a>
-          
-            <a href="/tags/动态规划/" rel="tag"># 动态规划</a>
+            <a href="/tags/知识总结/" rel="tag"># 知识总结</a>
           
         </div>
       
@@ -487,8 +479,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/10/codeforces-project-Euler-泛做/" rel="next" title="codeforces / project Euler 泛做">
-                <i class="fa fa-chevron-left"></i> codeforces / project Euler 泛做
+              <a href="/2019/03/10/My-head-file/" rel="next" title="My head file">
+                <i class="fa fa-chevron-left"></i> My head file
               </a>
             
           </div>
@@ -496,10 +488,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/03/10/My-head-file/" rel="prev" title="My head file">
-                My head file <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -543,8 +531,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -656,6 +653,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#逆元"><span class="nav-number">1.</span> <span class="nav-text">逆元</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
